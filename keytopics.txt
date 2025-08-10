@@ -77,7 +77,40 @@ rsa_keygen_bits:1024
 public key gen : 
 	openssl rsa -pubout -in privatekey.pem -out publickey.pem
 	
+public key and private key are base 64 encoded
 --------------------------------------------------------------------------------------------------------------
 
+Hash functions : 
+    It’s a special function that:
+    Takes any input (a word, file, image, number…)
+    Crunches it through some fixed recipe
+    Produces a short, fixed-size output (called a hash or digest)
+   eg : SHA 3 , RIPEMD,WHIRLPOOL
 
+
+	Message Authenticated Codes (MACs)
+	MACs are sometimes called keyed hash functions, and they can be used to provide message integrity and
+authentication. More specifically, they are used to provide data origin authentication.
+	
+	Here : 
+	Sender computes 
+	MAC = HMAC_SHA256("Pay Bob 100", "k1ngf1sh")
+MAC = "6a3f…b9"
+
+	Sends : 
+	Message: Pay Bob 100
+	MAC:     6a3f…b9
+
+	Receiver :
+	Uses "k1ngf1sh" and "Pay Bob 100" to recompute.
+	If it gets "6a3f…b9" → all good.
+	If not → someone messed with it or used the wrong key.
+
+A plain hash (like SHA-256) protects against accidental changes,
+but anyone can compute a hash if they know the message.
+
+MACs add a secret key, so only people with the key can make a valid code.
+This protects against intentional tampering.
+
+--------------------------------------------------------------------------------------------------------------
 
