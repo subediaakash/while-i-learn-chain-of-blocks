@@ -21,5 +21,63 @@ Symmetric Cryptography : same key is used to encrypt and decrypt data .Ex: DES, 
 ------------------------------------------------------------------------------------------------
 
 
-Data Encryption Standard (DES)
+Advanced encryption standard : 
+	Subbypte place : eg a-> p, b->z ...
+	Shift Rows 
+	Mix colms
+	Add Round Key
+
+-----------------------------------------------------------------------------------------------
+
+Public Key Cryptography 
+	Public keys and private keys are  used for encyprtion and decryption here 
+	RSA :
+	1 : modulus generation : select two large prime numbers p and q , multiply p and q , we get n = p.q to generate modulus n
+        2 : Generate Co prime
+		Assume a number called e 
+		e should be a number that no nuumber other than one can divide e and (p-1).(q-1)
+		this is called co-prime , that is e is the co prime of(p-1)(q-1), in simpler terms gcd(e, (p-1)(q-1)) = 1.
+	3 : Generate the public key  :
+		the modulus generated in step one and co prime e generated in step 2 is a pair together that is public key. This part is the public part that can be shared with anyone.
+	4 : Generate the private key :
+		The private key d here is calculated from p q and e. The private key is basically the inverse of e modulo(p-1)(q-1). in the equation form it is:
+		e x d = 1 mod(p-1)(q-1)
+
+		we calculate d . the d is the private key
+
+Encryption and Decryption using RSA
+	C = p^e mod n
+	this means plain text p is raised e number of times and then reduced to modulo n. 
+Decrytion in Rsa is provided in the following equation 
+	P = C^d mod n
+	this means the receiver who has a public key pair(n,e) can decipher the data by raising c to value the private key d and reducing to modulo n.
+
+Elliptic Curve Cryptography :
+	Elliptic curve crytography is based on discrete logarithm problem founded upon elliptic curves over finite fields (A field is like a ring, but better:
+    Every nonzero element has a multiplicative inverse (you can divide by it).
+    Multiplication is commutative.)
+
+ECC is generally used for : 
+	Key exchange
+	Digital Signatures
+
+Maths behind ECC
+	elliptic curve is basically a type of polynomial equation weierstrass equation , which generates a curve over a finite field .
+       elliptic cover is defined as :  y^2 = x^3+Ax+B mod P
+
+
+--------------------------------------------------------------------------------------------------------------
+
+RSA public and Private Key Pair 
+
+Private key using openssl:
+	openssl genpkey -algorithm RSA -out privatekey.pem -pkeyopt \
+rsa_keygen_bits:1024
+
+public key gen : 
+	openssl rsa -pubout -in privatekey.pem -out publickey.pem
+	
+--------------------------------------------------------------------------------------------------------------
+
+
 
