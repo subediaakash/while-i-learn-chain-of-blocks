@@ -1,4 +1,21 @@
 - Data origin authentication
 - Non Repudiation  : a service that offers definitive proof that a particular activity has occurred .
 
+-Accountability : assurance which states that actions affecting security can be traced back to the responsible party.
 
+Cryptographic Primitives : Keyless Primitives , Symmetric Primitives , Assymetric Primitives
+
+ 	- Keyless : Random Numbers ,Hash Funcs
+	- Symmetric Primitives : Secret key ciphers , Macs
+	- Asymmetric Primitives : Digital Signatures , Public Key ciphers
+
+Symmetric Cryptography : same key is used to encrypt and decrypt data .Ex: DES, AES (block ciphers)
+	Stream Ciphers : encryption algos applied on a bit by bit basis. They are  simple moduloe  2 additions / XOR operations 
+		Types : Syncronous and Async
+		Syncronous : Dependent only on the key
+		Asyncronous : depended on key and encrypted data
+	Block Ciphers : Breaks up the texts into blocks of fixed size and then perform encryption
+		Cipher block chaining : each block of plain text is XOR'd with the previously encrypted block.
+
+	Cryptographic hash node : block ciphers are used as a compression function  to produce a hash of a plain text 
+------------------------------------------------------------------------------------------------
