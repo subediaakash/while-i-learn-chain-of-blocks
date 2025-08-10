@@ -19,3 +19,7 @@ Symmetric Cryptography : same key is used to encrypt and decrypt data .Ex: DES, 
 
 	Cryptographic hash node : block ciphers are used as a compression function  to produce a hash of a plain text 
 ------------------------------------------------------------------------------------------------
+
+
+Data Encryption Standard (DES)
+
