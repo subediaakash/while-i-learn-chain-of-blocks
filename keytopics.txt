@@ -1,0 +1,4 @@
+- Data origin authentication
+- Non Repudiation  : a service that offers definitive proof that a particular activity has occurred .
+
+
