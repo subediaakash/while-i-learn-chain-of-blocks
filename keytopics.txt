@@ -73,7 +73,6 @@ RSA public and Private Key Pair
 Private key using openssl:
 	openssl genpkey -algorithm RSA -out privatekey.pem -pkeyopt \
 rsa_keygen_bits:1024
-
 public key gen : 
 	openssl rsa -pubout -in privatekey.pem -out publickey.pem
 	
@@ -113,4 +112,22 @@ MACs add a secret key, so only people with the key can make a valid code.
 This protects against intentional tampering.
 
 --------------------------------------------------------------------------------------------------------------
+
+Hash Tables : 
+A hash table is a data structure that is used to map keys to values. Internally, a hash function is used to calculate an index into an array of buckets from which the required value can be found.
+
+ 	Distributed Hash Tables :
+	Data is passed through a hash function, which then generates
+a compact key. This key is then linked with the data (values) on the peer-to-peer network. When users on the
+network request the data (via the filename), the filename can be hashed again to produce the same key, and any
+node on the network can then be requested to find the corresponding data. DHT provides decentralization, fault
+tolerance, and scalability:
+
+Digital Signatures : 
+	Digital signatures are used in blockchain where the transactions are digitally signed by senders using their private key before broadcasting the transaction to the network. This digital signing, proves they are the rightful owner of the asset, for example, bitcoins
+
+RSA digital signature algorithm 
+	Following is the RSA digital signature algorithm : 
+	- Calculate the hash value of the data packet 
+	- Sign the hash value with the signer's private key
 
